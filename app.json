@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "RealSpeed",
+    "slug": "realspeed",
+    "version": "1.0.0",
+    "icon": "./assets/realspeed-icon.png",
+    "splash": {
+      "image": "./assets/realspeed-splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F3F6F7"
+    },
+    "orientation": "default",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "RealSpeed uses your location to display GPS speed and record trips you start.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "RealSpeed uses background location only while a trip is being recorded."
+      }
+    },
+    "android": {
+      "package": "com.realspeed.dashboard",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/realspeed-adaptive.png",
+        "backgroundColor": "#087F72"
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "RealSpeed uses your location to show GPS speed and record trips you start.",
+          "locationAlwaysAndWhenInUsePermission": "Allow background location to keep recording an active trip when the app is not on screen.",
+          "isAndroidBackgroundLocationEnabled": true,
+          "isAndroidForegroundServiceEnabled": true,
+          "isIosBackgroundLocationEnabled": true
+        }
+      ],
+      "expo-sqlite",
+      "expo-sharing",
+      "@maplibre/maplibre-react-native",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/realspeed-icon.png",
+          "imageWidth": 220,
+          "resizeMode": "contain",
+          "backgroundColor": "#F3F6F7"
+        }
+      ],
+      "./plugins/withRealSpeedTripNotification"
+    ],
+    "extra": {
+      "mapStyleUrl": "https://tiles.openfreemap.org/styles/liberty",
+      "mapAttribution": "© OpenFreeMap · © OpenStreetMap contributors",
+      "eas": {
+        "projectId": "85561100-7bf3-46e2-9e13-61b87d3ee744"
+      }
+    },
+    "owner": "philxdev718"
+  }
+}
